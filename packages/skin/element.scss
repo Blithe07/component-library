@@ -1,0 +1,139 @@
+body {
+  /* dialog */
+  .el-dialog {
+    --el-dialog-title-font-size: 16px;
+    border-radius: 4px;
+
+    &__header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 46px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-right: 0;
+      background: var(--primary-color);
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    &__title {
+      font-weight: 500;
+      color: #fff;
+    }
+
+    &__headerbtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 100%;
+      top: 0;
+      color: rgba(255, 255, 255, 0.7);
+
+      &:hover .el-dialog__close {
+        color: #fff;
+      }
+
+      .el-dialog__close {
+        color: currentColor;
+      }
+    }
+
+    &__footer {
+      text-align: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      border-top: 1px solid #ddd;
+
+      .el-button {
+        min-width: 7em;
+      }
+
+      .el-button + .el-button {
+        margin-left: 20px;
+      }
+    }
+  }
+
+  /* messagebox */
+  .el-message-box {
+    --el-dialog-title-font-size: 16px;
+    border-radius: 4px;
+    border: none;
+
+    &__content {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    &__header {
+      position: relative;
+      display: flex;
+      align-items: center;
+      height: 46px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-right: 0;
+      background: var(--primary-color);
+      border-top-left-radius: inherit;
+      border-top-right-radius: inherit;
+    }
+
+    &__title {
+      font-weight: 500;
+      color: #fff;
+      font-size: var(--el-dialog-title-font-size, 16px);
+    }
+
+    &__headerbtn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 44px;
+      height: 100%;
+      top: 0;
+      right: 0;
+      color: rgba(255, 255, 255, 0.7);
+
+      &:hover .el-message-box__close {
+        color: #fff;
+      }
+
+      .el-message-box__close {
+        color: currentColor;
+      }
+    }
+  }
+
+  /* 按钮间隙 */
+  .el-button + .el-button {
+    margin-left: 8px;
+  }
+
+  .el-divider {
+    &[mini],
+    &.mini {
+      margin: 0 4px;
+    }
+  }
+
+  /* 表单 */
+  .el-form-item__label::before {
+    order: 10;
+    margin-left: 4px;
+    margin-right: 0;
+  }
+
+  .el-form--label-left,
+  .el-form--label-right {
+    .el-form-item__label {
+      justify-content: flex-end;
+    }
+  }
+  .el-form--label-top .el-form-item .el-form-item__label {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}

@@ -1,0 +1,42 @@
+@use "sass:math";
+@use "sass:string";
+
+/* 主题列表 */
+$theme: (
+  // 红色
+  "light": #d32f2f,
+  // 蓝色
+  "blue": #114591,
+  // 金色
+  "gold": #dcae59,
+  // cjhx
+  "cjhx": #ffbe04,
+  // cjhx
+  "yellow": #ffbe04,
+);
+
+/* 生成主题所需颜色 */
+@mixin generateColor($color) {
+  --primary-color: #{$color};
+  --el-color-primary: var(--primary-color);
+
+  @for $i from 1 through 9 {
+    $new-color: lighten($color, math.percentage(math.div($i, 20)));
+    --el-color-primary-light-#{$i}: #{$new-color};
+  }
+
+  #{--el-color-primary-dark-2}: darken($color, 10%);
+}
+
+body {
+  @include generateColor(map-get($theme, "light"));
+}
+
+/* 根据配置生成主题 */
+@each $key, $value in $theme {
+  body[data-theme="#{$key}"],
+  body[data-theme="#{$key}"] ::before,
+  body[data-theme="#{$key}"] ::after {
+    @include generateColor($value);
+  }
+}

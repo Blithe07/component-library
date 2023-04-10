@@ -1,0 +1,39 @@
+/* vxe table chekbox主题 */
+.vxe-cell--checkbox:not(.is--disabled):hover .vxe-checkbox--icon,
+.vxe-custom--option:not(.is--disabled):hover .vxe-checkbox--icon,
+.is--indeterminate.vxe-custom--option .vxe-checkbox--icon,
+.is--checked.vxe-cell--checkbox,
+.is--checked.vxe-custom--option,
+.is--indeterminate.vxe-custom--option,
+.is--indeterminate.vxe-cell--checkbox .vxe-checkbox--icon,
+.is--checked .vxe-checkbox--icon {
+  color: var(--primary-color) !important;
+}
+
+/* vex toolbar 主题 */
+.vxe-button.type--button:not(.is--disabled) {
+  &:active {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+  }
+  &:hover {
+    color: var(--primary-color) !important;
+  }
+  &:focus {
+    box-shadow: none;
+    border-color: var(--primary-color) !important;
+  }
+}
+
+.vxe-custom--footer button:hover {
+  color: var(--primary-color) !important;
+}
+
+/** vxe-table  */
+.vxe-grid {
+  .toolbar-custom {
+    height: auto;
+    padding-top: 0;
+    padding-bottom: 10px;
+  }
+}
